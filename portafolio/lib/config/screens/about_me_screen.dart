@@ -1,37 +1,65 @@
 import 'package:flutter/material.dart';
+import 'package:portafolio/config/widgets/my_cards.dart';
 
 class AboutMeScreen extends StatelessWidget {
-  const AboutMeScreen({super.key});
+  final VoidCallback onChangeTheme;
+  const AboutMeScreen({super.key, required this.onChangeTheme});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.all(4.0),
-          child: CircleAvatar(
-            backgroundImage: AssetImage("assets/images/logo.jpg"),
-          ),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.pop(context),
+          tooltip: 'Volver',
         ),
-        title: Text('Acerca de mi'),
+        title: const Text(
+          'Acerca de mí',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+        ),
         centerTitle: true,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 14, top: 4),
+            child: CircleAvatar(
+              backgroundImage: AssetImage("assets/images/logo.jpg"),
+              radius: 25,
+            ),
+          ),
+        ],
       ),
-      body: _MeView(),
-    );
-  }
-}
-
-class _MeView extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: Column(
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
+        child: Stack(
           children: [
-            Expanded(child: Container()),
-
-            Text('We were too close to the stars candy❤️'),
+            Column(
+              children: const [
+                CardsSection(),
+                SizedBox(height: 50),
+                Center(
+                  child: Text(
+                    'We were too close to the stars candy❤️',
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontStyle: FontStyle.italic,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Positioned(
+              left: 10,
+              bottom: 10,
+              child: FloatingActionButton(
+                heroTag: null,
+                mini: true,
+                onPressed: onChangeTheme,
+                tooltip: 'Cambiar tema',
+                child: const Icon(Icons.color_lens),
+              ),
+            ),
           ],
         ),
       ),

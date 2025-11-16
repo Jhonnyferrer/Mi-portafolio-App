@@ -11,18 +11,19 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   cupertino_icons: ^1.0.8
+  url_launcher: ^6.1.11
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   flutter_lints: ^5.0.0
 
 flutter:
-
   uses-material-design: true
-
   assets:
     - assets/images/logo.jpg
+    - assets/images/dulcesita.jpeg
+    - assets/images/dmc_icon.jpg
+    - assets/images/re_icon.jpg
+    - assets/images/mk_icon.jpg
