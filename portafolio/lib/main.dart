@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:portafolio/config/theme/app_theme.dart';
+import 'config/screens/home_screen.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(const JPApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class JPApp extends StatelessWidget {
+  const JPApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,12 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Portafolio De Jhonny',
       debugShowCheckedModeBanner: false,
       theme: AppTheme(selectedColor: 5).theme(),
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Mi portafolio personal')),
-        body: Center(
-          child: FilledButton.tonal(onPressed: () {}, child: Text('Click me')),
-        ),
-      ),
+      home: const HomeScreen(),
     );
   }
 }
