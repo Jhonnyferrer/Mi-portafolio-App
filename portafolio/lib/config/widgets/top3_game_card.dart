@@ -22,7 +22,7 @@ class GameRankingCard extends StatelessWidget {
               children: [
                 Icon(Icons.emoji_events, color: Colors.amber, size: 32),
                 const SizedBox(width: 8),
-                Text('Top 3 Sagas de videojuegos', style: titleStyle),
+                Text('Mi Top 3 Sagas de videojuegos', style: titleStyle),
               ],
             ),
             const SizedBox(height: 16),
