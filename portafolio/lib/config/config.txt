@@ -1,0 +1,4 @@
+
+Carpeta config de configuraciones,
+aqui pondre carpetas como theme para los temas de la app, screens para las pantallas etc...
+y asi de esta forma llevar una estructura mas organizada de mi proyecto
