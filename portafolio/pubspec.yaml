@@ -13,6 +13,8 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.8
   url_launcher: ^6.1.11
+  just_audio: ^0.9.30
+  provider: ^6.1.2
 
 dev_dependencies:
   flutter_test:
@@ -27,3 +29,5 @@ flutter:
     - assets/images/dmc_icon.jpg
     - assets/images/re_icon.jpg
     - assets/images/mk_icon.jpg
+    - assets/sounds/musica.mp3
+    - assets/images/fondo_home.jpg

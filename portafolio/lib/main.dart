@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:portafolio/config/theme/app_theme.dart';
+import 'package:portafolio/config/Audio/music.dart';
 import 'config/screens/home_screen.dart';
 
 void main() {
@@ -25,11 +27,14 @@ class _JPAppState extends State<JPApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Portafolio De Jhonny',
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme(selectedColor: selectedColorIndex).theme(),
-      home: HomeScreen(changeTheme: changeTheme),
+    return ChangeNotifierProvider(
+      create: (_) => AudioService(),
+      child: MaterialApp(
+        title: 'Portafolio De Jhonny',
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme(selectedColor: selectedColorIndex).theme(),
+        home: HomeScreen(onChangeTheme: changeTheme),
+      ),
     );
   }
 }
